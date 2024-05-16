@@ -553,14 +553,16 @@ import { Button } from "@mui/material";
 //import FavoriteIcon from "@mui/icons-material/Favorite";
 
 function getModalStyle() {
-  const top = 50;
-  const left = 50;
+  const top = "auto";
+  const left = "auto";
+  const width = 500;
 
   return {
     top: `${top}%`,
     left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`,
+    // transform: `translate(-${top}%, -${left}%)`,
     backdrop: "rgba(0, 0, 0, 0.5)",
+    width: `${width}px`,
   };
 }
 
@@ -646,96 +648,127 @@ function App() {
 
   return (
     <div className="app">
-      <Modal open={open} onClose={() => setOpen(false)} sx={modalStyle}>
-        {/* Sign Up Modal Content */}
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <Modal open={open} onClose={() => setOpen(false)} sx={modalStyle}>
+          {/* Sign Up Modal Content */}
 
-        <div style={modalStyle}>
-          <form className="app__signUp">
-            <img
-              src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png"
-              alt="instagram logo"
-              style={{ width: 102 }}
-            />
-            <input
-              placeholder="username"
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-            <input
-              placeholder="email"
-              type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              placeholder="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <Button
-              sx={{
-                backgroundColor: "blue",
-                color: "white",
-                padding: "10px 20px",
-                borderRadius: "5px",
-              }}
+          <div style={modalStyle}>
+            <form
               style={{
-                marginLeft: 22,
-                color: "#17a2b8",
-                borderColor: "#17a2b8",
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                textAlign: "center",
+                marginLeft: "390px",
               }}
-              type="submit"
-              onClick={handleSignUp}
+              className="app__signUp"
             >
-              Sign Up
-            </Button>
-          </form>
-        </div>
-      </Modal>
+              <img
+                src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png"
+                alt="instagram logo"
+                style={{ width: 102, marginLeft: 125 }}
+              />
+              <input
+                placeholder="username"
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              <input
+                placeholder="email"
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                placeholder="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <Button
+                // sx={{
+                //   backgroundColor: "blue",
+                //   color: "white",
+                //   padding: "10px 20px",
+                //   borderRadius: "5px",
+                // }}
+                style={{
+                  marginLeft: 0,
+                  color: "#17a2b8",
+                  borderColor: "#17a2b8",
+                  width: "100%",
+                  marginRight: "300px",
+                }}
+                type="submit"
+                onClick={handleSignUp}
+              >
+                Sign Up
+              </Button>
+            </form>
+          </div>
+        </Modal>
 
-      <Modal
-        open={openSignIn}
-        onClose={() => setOpenSignIn(false)}
-        sx={modalStyle}
-      >
-        {/* Sign In Modal Content */}
+        <Modal
+          open={openSignIn}
+          onClose={() => setOpenSignIn(false)}
+          sx={modalStyle}
+        >
+          {/* Sign In Modal Content */}
 
-        <div style={modalStyle}>
-          <form className="app__signUp">
-            <img
-              src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png"
-              alt="instagram logo"
-              style={{ width: 102 }}
-            />
-            <input
-              placeholder="email"
-              type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              placeholder="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <Button
-              sx={{
-                backgroundColor: "blue",
-                color: "white",
-                padding: "10px 20px",
-                borderRadius: "5px",
+          <div style={modalStyle}>
+            <form
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                textAlign: "center",
+                marginLeft: "390px",
               }}
-              type="submit"
-              onClick={handleSignIn}
+              className="app__signUp"
             >
-              Sign In
-            </Button>
-          </form>
-        </div>
-      </Modal>
+              <img
+                src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png"
+                alt="instagram logo"
+                style={{ width: 102, marginLeft: 125 }}
+              />
+              <input
+                placeholder="email"
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                placeholder="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <Button
+                // sx={{
+                //   backgroundColor: "blue",
+                //   color: "white",
+                //   padding: "10px 20px",
+                //   borderRadius: "5px",
+                // }}
+                style={{
+                  marginLeft: 0,
+                  color: "#17a2b8",
+                  borderColor: "#17a2b8",
+                  width: "100%",
+                  marginRight: "300px",
+                }}
+                type="submit"
+                onClick={handleSignIn}
+              >
+                Sign In
+              </Button>
+            </form>
+          </div>
+        </Modal>
+      </div>
 
       {user && (
         <Modal
@@ -803,17 +836,18 @@ function App() {
                 {/* upload button */}
                 <span>
                   <Button
-                    sx={{
-                      backgroundColor: "blue",
-                      color: "white",
-                      padding: "10px 20px",
-                      borderRadius: "5px",
-                    }}
+                    // sx={{
+                    //   backgroundColor: "blue",
+                    //   color: "white",
+                    //   padding: "10px 20px",
+                    //   borderRadius: "5px",
+                    // }}
                     className="upload-btn"
                     style={{
                       marginLeft: 22,
                       color: "#17a2b8",
                       borderColor: "#17a2b8",
+                      borderRadius: 3,
                     }}
                     onClick={handlePostUpload}
                   >
@@ -952,8 +986,8 @@ function App() {
             {/* logout btn */}
             <Button
               sx={{
-                backgroundColor: "blue",
-                color: "white",
+                color: "#17a2b8",
+                borderColor: "#17a2b8",
                 padding: "10px 20px",
                 borderRadius: "5px",
               }}
@@ -991,10 +1025,13 @@ function App() {
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Button
             sx={{
-              backgroundColor: "blue",
-              color: "white",
+              backgroundColor: "#17a2b8",
+              color: "#fff",
+              borderColor: "#17a2b8",
               padding: "10px 20px",
               borderRadius: "5px",
+              marginRight: "5px",
+              marginTop: "5px",
             }}
             onClick={() => setOpen(true)}
           >
@@ -1003,10 +1040,13 @@ function App() {
 
           <Button
             sx={{
-              backgroundColor: "blue",
-              color: "white",
+              backgroundColor: "#17a2b8",
+              color: "#fff",
+              borderColor: "#17a2b8",
               padding: "10px 20px",
               borderRadius: "5px",
+              marginLeft: "5px",
+              marginTop: "5px",
             }}
             onClick={() => setOpenSignIn(true)}
           >
@@ -1018,9 +1058,7 @@ function App() {
       <footer className="app__footer">
         <p>
           <span className="MadeWithLove">
-            Made with
-            {/* <FavoriteIcon />  */}
-            by{" "}
+            Zaio project by {/* <FavoriteIcon />  */}
             <a
               href="https://sibonelo-portfolio.vercel.app/"
               rel="noopener noreferrer"

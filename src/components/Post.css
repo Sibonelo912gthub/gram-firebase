@@ -150,6 +150,13 @@
 
 .post__moreModalTitle {
   text-align: center;
+  color: rgb(23, 162, 184);
+  /* margin-top: var(--post-content-margin) !important;
+  border-radius: 1rem !important;
+  width: 100%;
+  padding: 1rem 1.25rem !important;
+  color: #dc004e !important;
+  background-color: #fceef0 !important; */
 }
 
 .post__modalInput {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import firebase from "firebase";
 import { db, storage } from "../firebase";
-//import PhotoCamera from "@mui/icons-material/PhotoCamera";
+import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 import { v4 as uuidv4 } from "uuid";
 import { Button, CircularProgress, IconButton } from "@mui/material";
 import "./ImageUpload.css";
@@ -70,8 +70,9 @@ function ImageUpload({ currentUser, openAddPost }) {
   const readURL = (input) => URL.createObjectURL(input);
 
   return (
-    <div className="imageUpload">
+    <div className="imageUpload" style={{ marginLeft: 382, width: "100%" }}>
       <CircularProgress
+        className="imageUpload__progress"
         sx={{
           visibility: progress > 0 ? "visible" : "hidden",
           opacity: progress > 0 ? 1 : 0,
@@ -92,7 +93,15 @@ function ImageUpload({ currentUser, openAddPost }) {
         <div className="imageUpload__previewPlaceholder"></div>
       )}
 
-      <div className="imageUpload__inputContainer">
+      <div
+        className="imageUpload__inputContainer"
+        style={{
+          backgroundColor: "white",
+          borderRadius: "1rem",
+          backgroundColor: "#f5f6f8",
+          marginBottom: 15,
+        }}
+      >
         <input
           accept="image/*"
           style={{ display: "none" }}
@@ -106,7 +115,7 @@ function ImageUpload({ currentUser, openAddPost }) {
             aria-label="upload picture"
             component="span"
           >
-            {/* <PhotoCamera /> */}
+            <PhotoCameraIcon style={{ marginTop: 6 }} />
           </IconButton>
         </label>
 
@@ -116,12 +125,13 @@ function ImageUpload({ currentUser, openAddPost }) {
           placeholder="Enter a caption..."
           value={caption}
           onChange={(event) => setCaption(event.target.value)}
+          style={{ border: 0 }}
         />
       </div>
 
       <Button
         sx={{
-          backgroundColor: "blue",
+          backgroundColor: "rgb(23, 162, 184)",
           color: "white",
           padding: "10px 20px",
           borderRadius: "5px",

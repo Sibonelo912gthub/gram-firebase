@@ -112,7 +112,10 @@ function Profile({ user }) {
           sx: { backdropFilter: "blur(25px) saturate(120%)" },
         }}
       >
-        <div style={modalStyle} className="paper">
+        <div
+          className="paper"
+          style={{ marginLeft: 320, width: "50%", marginTop: 50 }}
+        >
           <form className="profile__preferences">
             <CircularProgress
               style={{ display: progress > 0 ? "block" : "none" }}

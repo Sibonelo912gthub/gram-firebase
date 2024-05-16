@@ -7,11 +7,11 @@ import firebase from "firebase";
 //import { Button } from "@material-ui/core";
 import Moment from "react-moment";
 //import Modal from "@material-ui/core/Modal";
-//import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 //import IconButton from "@material-ui/core/IconButton";
 
 import Avatar from "@mui/material/Avatar";
-//import SendIcon from "@mui/icons-material/Send";
+import SendIcon from "@mui/icons-material/Send";
 import { Button } from "@mui/material";
 import Modal from "@mui/material/Modal";
 //import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
@@ -154,9 +154,10 @@ function Post({ user, postId, image, author, caption, date, modal }) {
               component="span"
               onClick={() => setOpenPostEdit(true)}
             >
-              {/* <MoreHorizIcon /> */}
+              <MoreHorizIcon />
             </IconButton>
             <Modal
+              style={{ marginLeft: 382, width: "100%", marginTop: 50 }}
               open={openPostEdit}
               onClose={() => setOpenPostEdit(false)}
               // className={modal.classes.backdrop}
@@ -325,7 +326,7 @@ function Post({ user, postId, image, author, caption, date, modal }) {
               type="submit"
               onClick={handlePostComment}
             >
-              {/* <SendIcon /> */}
+              <SendIcon />
             </button>
           </form>
         </div>
