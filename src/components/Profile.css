@@ -1,0 +1,81 @@
+.profile {
+  position: relative;
+}
+
+.profile__avatar {
+  cursor: pointer;
+}
+
+.profile__preferences {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__addAvatar {
+  cursor: pointer;
+  margin: 0 auto 1rem;
+}
+
+.profile__preferences input {
+  margin: 1rem 0 0;
+  border: none;
+  border-radius: 1rem;
+  background-color: #f5f6f8;
+  padding: 1rem 1.25rem;
+}
+
+.profile__preferences button {
+  margin: 1rem 0 0;
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+}
+
+.profile__save {
+  color: #1452fe !important;
+  background-color: #f0f3fc !important;
+  padding: 1rem 1.25rem !important;
+}
+
+.profile__logout {
+  color: #1452fe !important;
+  background-color: #f0f3fc !important;
+  padding: 1rem 1.25rem !important;
+}
+
+.profile__save:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.profile__deleteModalButtonGroup {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.profile__delete {
+  border-radius: 1rem !important;
+  width: 100%;
+  padding: 1rem 1.25rem !important;
+  color: #dc004e !important;
+  background-color: #fceef0 !important;
+}
+
+.profile__progress {
+  object-fit: contain;
+  z-index: 1;
+  max-width: 40px;
+  max-height: 40px;
+  margin: auto;
+  position: absolute;
+  top: calc(50% - 114px);
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+}
+
+.makeStyles-backdrop-3 > div:first-child {
+  background-color: transparent !important;
+}
+
+.jss3 > div:first-child {
+  background-color: transparent !important;
+}

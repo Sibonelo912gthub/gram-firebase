@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+}
+
+.app {
+  background-color: #eeeeee;
+  position: relative;
+  padding-bottom: 5rem;
+}
+
+.app__header {
+  background-color: whitesmoke;
+  backdrop-filter: blur(25px) saturate(120%);
+  backface-visibility: hidden;
+  object-fit: contain;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin: auto;
+  padding: 1rem 2rem;
+  max-width: 76rem;
+  transition: all 0.3s ease-in;
+  opacity: 0;
+}
+
+.app__logoutContainer {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 48rem) {
+  .app__headerLogo {
+    font-size: 1.125rem;
+  }
+}
+
+.app__signUp {
+  display: flex;
+  flex-direction: column;
+}
+
+.app__signUp .app__headerLogo {
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.app__signUp input {
+  margin: 1rem 0 0;
+  font-size: 12px;
+  border: none;
+  border-radius: 1rem;
+  background-color: #f5f6f8;
+  padding: 1rem 1.25rem;
+}
+
+@media (max-width: 48rem) {
+  .app__signUp input {
+    font-size: 16px;
+  }
+}
+
+.app__signUp button {
+  margin: 1.5rem 0 0;
+  color: #1452fe;
+  background-color: #f0f3fc;
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+}
+
+.app__signUp svg {
+  margin: 0 auto 1rem;
+}
+
+.app__posts {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 48rem) {
+  .app__posts {
+    padding: 0;
+  }
+}
+
+.app__add {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 1.75rem;
+  transition: all 0.3s ease-in;
+  opacity: 0;
+}
+
+.app__addButton {
+  box-shadow: none !important;
+  margin: 0 auto !important;
+}
+
+.makeStyles-backdrop-1 > div:first-child {
+  background-color: transparent !important;
+}
+
+.jss1 > div:first-child {
+  background-color: transparent !important;
+}
+
+.app__footer {
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 48rem) {
+  .app__footer {
+    text-align: left;
+    font-size: 12px;
+    padding-left: 1.5rem;
+  }
+}
+
+.app__footer a {
+  text-decoration: none;
+  color: #3f51b5;
+}
+
+.MadeWithLove svg {
+  color: #e90606;
+  margin: 0 3px;
+  font-size: 12px;
+  animation: pound 0.35s infinite alternate;
+  -webkit-animation: pound 0.35s infinite alternate;
+}
+
+@-webkit-keyframes pound {
+  to {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes pound {
+  to {
+    transform: scale(1.5);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .app {
+    background-color: black;
+  }
+
+  .app__header {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  .app__footer {
+    color: white;
+  }
+
+  .upload-btn:hover {
+    background-color: #17a2b8;
+  }
+
+  .app__loginContainer button {
+    color: white;
+  }
+}
