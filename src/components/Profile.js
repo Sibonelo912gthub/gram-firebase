@@ -137,6 +137,8 @@ function Profile({ user }) {
                   opacity: progress > 0 ? 0.25 : 1,
                   width: "140px",
                   height: "140px",
+                  margin: 0,
+                  left: 250,
                 }}
                 className="profile__addAvatar"
                 alt={user.displayName}

@@ -157,15 +157,19 @@ function Post({ user, postId, image, author, caption, date, modal }) {
               <MoreHorizIcon />
             </IconButton>
             <Modal
-              style={{ marginLeft: 382, width: "100%", marginTop: 50 }}
+              className="argin"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "100%",
+                paddingTop: 270,
+              }}
               open={openPostEdit}
               onClose={() => setOpenPostEdit(false)}
-              // className={modal.classes.backdrop}
             >
-              <div
-                style={modal.modalStyle}
-                // className={modal.classes.paper}
-              >
+              <div style={modal.modalStyle} className="modaledit">
                 <h3 className="post__moreModalTitle">Edit Post</h3>
                 <div className="post__moreModalActions">
                   <textarea

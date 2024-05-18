@@ -22,6 +22,24 @@
   }
 }
 
+@media (max-width: 1050px) {
+  .modaledit {
+    width: 500px;
+  }
+}
+
+/* @media (max-width: 640px) {
+  .modaledit {
+    width: 250px;
+    margin-left: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+   
+  }
+} */
+
 .post__header {
   display: flex;
   align-items: center;

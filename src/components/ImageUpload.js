@@ -70,7 +70,7 @@ function ImageUpload({ currentUser, openAddPost }) {
   const readURL = (input) => URL.createObjectURL(input);
 
   return (
-    <div className="imageUpload" style={{ marginLeft: 382, width: "100%" }}>
+    <div className="imageUpload" style={{ left: 310, width: "100%" }}>
       <CircularProgress
         className="imageUpload__progress"
         sx={{
@@ -130,12 +130,13 @@ function ImageUpload({ currentUser, openAddPost }) {
       </div>
 
       <Button
-        sx={{
-          backgroundColor: "rgb(23, 162, 184)",
-          color: "white",
-          padding: "10px 20px",
-          borderRadius: "5px",
-        }}
+        // sx={{
+        //   backgroundColor: "rgb(23, 162, 184)",
+        //   color: "white",
+        //   padding: "10px 20px",
+        //   borderRadius: "5px",
+        // }}
+        style={{ backgroundColor: "rgb(23, 162, 184)", width: 499 }}
         disabled={!image}
         onClick={handleUpload}
       >
